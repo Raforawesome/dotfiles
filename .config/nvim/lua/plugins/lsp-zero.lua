@@ -1,8 +1,6 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-	-- see :help lsp-zero-keybindings
-	-- to learn the available actions
 	lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
@@ -26,6 +24,25 @@ require('mason-lspconfig').setup({
 		end,
 		-- lsp_zero.default_setup,
 	},
+})
+
+lsp_zero.setup({
+  float_border = 'rounded',
+  call_servers = 'local',
+  configure_diagnostics = true,
+  setup_servers_on_start = true,
+  set_lsp_keymaps = {
+    preserve_mappings = false,
+    omit = {},
+  },
+  manage_nvim_cmp = {
+    set_sources = 'recommended',
+    set_basic_mappings = true,
+    set_extra_mappings = false,
+    use_luasnip = true,
+    set_format = true,
+    documentation_window = true,
+  },
 })
 
 require("luasnip.loaders.from_vscode").lazy_load()

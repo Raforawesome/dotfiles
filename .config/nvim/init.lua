@@ -7,6 +7,7 @@ vim.cmd("set tabstop=4")      -- make tab width 4
 vim.cmd("set shiftwidth=4")   -- Make vim indenter use 4 width as well
 vim.cmd("set ignorecase")     -- Make searches case-insensitive
 vim.cmd("set smartcase")      -- Make searches only case-sensitive if you use a capital
+vim.opt.wrap = false
 
 -- Set completeopt to have a better completion experience (:help completeopt)
 -- menuone: popup even when there"s only one match
