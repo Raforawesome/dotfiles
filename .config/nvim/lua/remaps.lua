@@ -22,5 +22,9 @@ vim.keymap.set('n', '<leader>ts', builtin.treesitter, opts)
 
 -- lsp-zero
 vim.keymap.set('n', '<leader>lsp', vim.cmd.Mason, opts)
-vim.keymap.set("n", "<C-Space>", ":lua vim.lsp.buf.hover()<CR>", opts)
+vim.keymap.set('n', "<C-Space>", ":lua vim.lsp.buf.hover()<CR>", opts)
+
+-- rust-tools
+local rust_tools = require("rust-tools")
+vim.keymap.set('n', '<leader>e!', function() rust_tools.expand_macro.expand_macro() end, opts)
 
