@@ -20,7 +20,9 @@ require('mason-lspconfig').setup({
 		-- 			require("plugins.rust-tools")
 		-- 		end,
 		function(name)
-			require("lspconfig")[name].setup({ on_attach = on_attach })
+			if name ~= "rust_analyzer" then
+				require("lspconfig")[name].setup({ on_attach = on_attach })
+			end
 		end,
 		-- lsp_zero.default_setup,
 	},

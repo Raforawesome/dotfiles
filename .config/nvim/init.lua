@@ -37,7 +37,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- telescope.nvim
 	{ "nvim-lua/plenary.nvim" },
 	{ "nvim-telescope/telescope.nvim",    branch = "0.1.x" },
 	{ "rose-pine/neovim",                 name = "rose-pine" },
@@ -58,6 +57,7 @@ require("lazy").setup({
 	{ "saecki/crates.nvim",               tag = "stable" },
 	{ "mfussenegger/nvim-dap" },
 	{ "rafamadriz/friendly-snippets" },
+	{ "j-hui/fidget.nvim" }
 })
 
 
@@ -69,7 +69,7 @@ require("lazy").setup({
 require("plugins.treesitter")
 require("plugins.rose-pine")
 require("plugins.lsp-zero")
--- require("plugins.rust-tools")
+require("plugins.rust-tools")
 require("plugins.cmp")
 
 -- Theming
@@ -82,6 +82,9 @@ require("crates").setup()
 
 -- lualine
 require("lualine").setup({ options = { theme = "auto" } })
+
+-- fidget
+require("fidget").setup()
 
 
 
