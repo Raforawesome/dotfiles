@@ -365,9 +365,9 @@ kmap("n", "<C-h>", ":Trouble document_diagnostics<CR>", map_opts)
     UI CUSTOMIZATION
 ]]
 -- Warning gutter symbols
-local signs = { Error = "", Warn = "", Hint = "", Info = " " }
+local signs = { error = "", warn = "", hint = "", info = " " }
 for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
+	local hl = "diagnosticsign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 

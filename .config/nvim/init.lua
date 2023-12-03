@@ -8,12 +8,17 @@ vim.cmd("set shiftwidth=4")   -- Make vim indenter use 4 width as well
 vim.cmd("set ignorecase")     -- Make searches case-insensitive
 vim.cmd("set smartcase")      -- Make searches only case-sensitive if you use a capital
 
--- Set completeopt to have a better completion experience
--- :help completeopt
+-- Set completeopt to have a better completion experience (:help completeopt)
 -- menuone: popup even when there"s only one match
 -- noinsert: Do not insert text until a selection is made
 -- noselect: Do not auto-select, nvim-cmp plugin will handle this for us.
 vim.o.completeopt = "menuone,noselect"
+
+local signs = { error = "", warn = "", hint = "", info = " " }
+for type, icon in pairs(signs) do
+	local hl = "diagnosticsign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
 
 
@@ -51,13 +56,14 @@ require("lazy").setup({
 	{ "hrsh7th/vim-vsnip" },
 	{ "simrat39/rust-tools.nvim" },
 	{ "lukas-reineke/lsp-format.nvim" },
-	{ "airblade/vim-gitgutter" },
 	{ "kyazdani42/nvim-web-devicons" },
+	{ "airblade/vim-gitgutter" },
 	{ "nvim-lualine/lualine.nvim" },
 	{ "saecki/crates.nvim",               tag = "stable" },
 	{ "mfussenegger/nvim-dap" },
 	{ "rafamadriz/friendly-snippets" },
-	{ "j-hui/fidget.nvim" }
+	{ "j-hui/fidget.nvim" },
+	{ "folke/trouble.nvim" }
 })
 
 
