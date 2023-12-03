@@ -27,7 +27,9 @@ cmp.setup({
 		{ name = "vsnip" },
 		{ name = "path" },
 		{ name = "buffer" },
+		{ name = "luasnip" }
 	},
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require("luasnip.loaders.from_vscode").lazy_load()

@@ -63,7 +63,8 @@ require("lazy").setup({
 	{ "mfussenegger/nvim-dap" },
 	{ "rafamadriz/friendly-snippets" },
 	{ "j-hui/fidget.nvim" },
-	{ "folke/trouble.nvim" }
+	{ "folke/trouble.nvim" },
+	{ "rafamadriz/friendly-snippets" },
 })
 
 
