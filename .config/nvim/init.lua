@@ -84,7 +84,9 @@ require("crates").setup()
 require("lualine").setup({ options = { theme = "auto" } })
 
 -- fidget
-require("fidget").setup()
+require("fidget").setup({
+	notification = { window = { border = "none", winblend = 0 } }
+})
 
 
 
