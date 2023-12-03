@@ -1,0 +1,30 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+# starship init fish | source
+
+#set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /Users/tahirchaudhry/.ghcup/bin # ghcup-env
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# pnpm
+set -gx PNPM_HOME "/Users/tahirchaudhry/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm endfish_add_path /Users/tahirchaudhry/.spicetify
+
+set fish_greeting ""
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /Users/tahirchaudhry/.ghcup/bin # ghcup-env
+
+
+# fish_config theme choose "Rosé Pine {Dawn, Moon}"
+fish_config theme choose "Rosé Pine"
+
+
+###########
+# ALIASES #
+###########
+alias py=python3
+
+
