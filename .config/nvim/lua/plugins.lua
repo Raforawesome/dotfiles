@@ -26,7 +26,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  {                   -- Adds git related signs to the gutter, as well as utilities for managing changes
+  { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -39,7 +39,7 @@ require('lazy').setup({
     },
   },
 
-  {                     -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -82,7 +82,7 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode',     mode = { 'n', 'x' } },
+        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
@@ -115,7 +115,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       require('telescope').setup {
@@ -136,6 +136,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
+      vim.keymap.set('n', '<leader>ss', builtin.treesitter, { desc = '[S]earch [T]reesitter Objects' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
@@ -144,8 +145,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       vim.keymap.set('n', '<C-b>', ':Neotree reveal toggle<CR>', { desc = '[ ] Open Neotree to the left' })
-      vim.keymap.set('n', '<C-p>', ':Neotree reveal toggle current<CR>',
-        { desc = '[ ] Open file picker in current window' })
+      vim.keymap.set('n', '<C-p>', ':Neotree reveal toggle current<CR>', { desc = '[ ] Open file picker in current window' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -185,7 +185,7 @@ require('lazy').setup({
       },
     },
   },
-  { 'Bilal2453/luvit-meta',     lazy = true },
+  { 'Bilal2453/luvit-meta', lazy = true },
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -204,7 +204,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       opts = { notification = { window = { winblend = 0 } } } },
+      { 'j-hui/fidget.nvim', opts = { notification = { window = { winblend = 0 } } } },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -601,8 +601,8 @@ require('lazy').setup({
     'shaunsingh/nord.nvim',
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme('nord')
-      vim.cmd.hi('Normal guibg=NONE ctermbg=NONE')
+      vim.cmd.colorscheme 'nord'
+      vim.cmd.hi 'Normal guibg=NONE ctermbg=NONE'
     end,
   },
 
@@ -732,7 +732,7 @@ require('lazy').setup({
   {
     'mrcjkb/rustaceanvim',
     version = '^5', -- Recommended
-    lazy = false,   -- This plugin is already lazy
+    lazy = false, -- This plugin is already lazy
   },
   'numToStr/FTerm.nvim',
   {
