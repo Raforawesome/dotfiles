@@ -1,0 +1,19 @@
+#########################
+#        COLORS         #
+#########################
+background-color=#34495ec0
+text-color=#ecf0f1c0
+border-color=#2c3e50c0
+
+#########################
+# NOTIFICATION SETTINGS #
+#########################
+# max-visible=5  # default is already 5, so commented
+# all size units are in pixels
+width=350
+height=150
+border-size=2
+border-radius=5
+# in miliseconds
+default-timeout=5000
+
