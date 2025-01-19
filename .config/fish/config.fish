@@ -5,6 +5,7 @@ if status is-interactive
     if set -q HYPRLAND_INSTANCE_SIGNATURE;; \
         else; hyprland; \
     end
+    clear
 end
 
 ###########
@@ -18,3 +19,7 @@ alias 264-run="clang -c src/*.c && clang -o main *.o && rm *.o && ./main && rm m
 alias neofetch=fastfetch
 alias neofetch=fastfetch
 
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
